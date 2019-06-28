@@ -1,12 +1,5 @@
 use high_scoresDB;
 
-CREATE TABLE scores (
-  id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(45) NULL,
-  score int NULL,
-  PRIMARY KEY (id)
-);
-
 INSERT INTO scores
     (name, score)
 VALUES
