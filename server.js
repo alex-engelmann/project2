@@ -1,4 +1,6 @@
 require("dotenv").config();
+let keys = require("./keys.js");
+
 var express = require("express");
 var exphbs = require("express-handlebars");
 
