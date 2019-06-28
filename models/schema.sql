@@ -1,3 +1,4 @@
+
 DROP DATABASE IF EXISTS high_scoresDB;
 CREATE DATABASE high_scoresDB;
 USE high_scoresDB
@@ -13,3 +14,4 @@ created DATE,
 PRIMARY KEY
     (id)
 ); 
+

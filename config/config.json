@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "penbed29",
-    "database": "burger_db",
+    "password": null,
+    "database": "high_scoresDB",
     "host": "localhost",
     "dialect": "mysql"
   },
