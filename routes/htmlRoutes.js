@@ -3,10 +3,10 @@ var db = require("../models");
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
+    db.Example.findAll({}).then(function (high_scoresDB) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        examples: high_scoresDB
       });
     });
   });
@@ -17,9 +17,9 @@ module.exports = function (app) {
       where: {
         id: req.params.id
       }
-    }).then(function (dbExample) {
+    }).then(function (high_scoresDB) {
       res.render("example", {
-        example: dbExample
+        example: high_scoresDB
       });
     });
   });
