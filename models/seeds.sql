@@ -1,3 +1,5 @@
+use high_scoresDB;
+
 INSERT INTO scores
     (name, score)
 VALUES
