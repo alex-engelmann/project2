@@ -2,13 +2,13 @@
 
 #Team Members
 
-Alex Engelmann - mostly back-end
-Jaison Heer - both front and back-end
-Kelen Quach - most front end
+Alex Engelmann
+Jaison Heer
+Kelen Quach
 
 #Description
 
-We plan to make a simple 2D game, using MySQL to store a high score table like in arcade games.  Right now we're considering a road crossing game, similar to Frogger.
+A simple 2D block catching game, using MySQL to store a high score table like in arcade games.  The falling blocks will represent web dev technologies and score will increase based on how many are caught using the moving platform at the bottom.
 
 #Technologies
 
