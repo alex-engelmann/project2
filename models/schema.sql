@@ -1,5 +1,17 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+DROP DATABASE IF EXISTS high_scoresDB;
+CREATE DATABASE high_scoresDB;
+USE high_scoresDB
+
+CREATE TABLE scores
+(
+    id INTEGER
+    AUTO_INCREMENT,
+    name VARCHAR
+    (30),
+score INTEGER,
+created DATE,
+PRIMARY KEY
+    (id)
+); 
+
