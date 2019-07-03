@@ -1,9 +1,19 @@
 <div class="container">
-  <h1>{{msg}}</h1>
-  <h2>This is our Home Page!</h2>
-  <div id="gameWindow" width="640" height="480"></div>
+  {{!-- <h1>{{msg}}</h1> --}}
+  <div id="gameWindow" width="640" height="480">
+    <div class="floating">
+      <header><span style="color:cadetblue;font-size:50pt;">Full Stack Mania</span></header>
+      <p id="directions">Catch all of the programming languages! </p>
+      <p id="lives-left"></p>
+      <div id="game-block"></div>
+      <button type="button" class="btn btn-light" id="Start">Start</button>
+      <br>
+      <br>
+      <!-- add the floating sprites -->
+      {{!-- <img id=animated-sprites-bg src="../public/img/background.png"></img> --}}
+    </div>
+  </div>
 </div>
-
 
 <script src="js/phaser.js"></script>
 <script src="js/main.js"></script>
