@@ -5,8 +5,7 @@ USE high_scoresDB
 
 CREATE TABLE scores
 (
-    id INTEGER
-    AUTO_INCREMENT,
+    id INTEGER AUTO_INCREMENT,
     name VARCHAR
     (30),
 score INTEGER,

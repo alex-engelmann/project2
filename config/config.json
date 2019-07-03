@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "Khelenq14",
     "database": "high_scoresDB",
     "host": "localhost",
     "dialect": "mysql"
