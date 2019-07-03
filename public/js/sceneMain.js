@@ -31,7 +31,6 @@ class SceneMain extends Phaser.Scene {
         this.load.image('background', 'img/background.png');
         this.load.image('player', 'img/player.png');
         this.load.image('block', 'img/tech_sprites/intnode.png');
-        this.load.image('goal', 'img/treasure.png');
     }
     create() {
         // create bg sprite
@@ -51,10 +50,6 @@ class SceneMain extends Phaser.Scene {
         this.block.setFriction(1,1);
         this.physics.add.collider(this.player, this.block);
 
-        // goal
-        this.goal = this.add.sprite(this.sys.game.config.width - 80, this.sys.game.config.height / 2, 'goal');
-        this.goal.setScale(1);
-
     }
     update() {
 
@@ -73,16 +68,14 @@ class SceneMain extends Phaser.Scene {
             this.player.x = this.playerMinX
         }
 
-        // treasure overlap check
-        let playerRect = this.player.getBounds();
-        let treasureRect = this.goal.getBounds();
+        //TODO set game over conditions
 
-        if (Phaser.Geom.Intersects.RectangleToRectangle(playerRect, treasureRect)) {
-            console.log('reached goal!');
+        // if ()) {
+            
 
-            // end game
-            return this.gameOver();
-        }
+        //     // end game
+        //     return this.gameOver();
+        // }
         // return this.gameOver(); this will end the game
     }
     gameOver() {
