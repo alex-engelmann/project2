@@ -32,7 +32,7 @@ window.onload = function () {
             //    tileBias: 16,
             //    forceX: false,
             //    isPaused: false,
-               debug: true,
+               debug: false,
             //    debugShowBody: true,
             //    debugShowStaticBody: true,
             //    debugShowVelocity: true,
