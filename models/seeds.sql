@@ -6,4 +6,6 @@ VALUES
     ("Kelly", 20),
     ("Brian", 30),
     ("Kim", 10),
-    ("Shane", 10)
+    ("Shane", 10);
+
+select * from high_scoresDB;

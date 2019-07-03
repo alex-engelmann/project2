@@ -1,7 +1,7 @@
 
 DROP DATABASE IF EXISTS high_scoresDB;
 CREATE DATABASE high_scoresDB;
-USE high_scoresDB
+USE high_scoresDB;
 
 CREATE TABLE scores
 (
