@@ -1,3 +1,16 @@
+class Collision {
+    static checkCollide(obj1, obj2) {
+        var distX = Math.abs(obj1.x - obj2.x);
+        var distY = Math.floor(Math.abs(obj1.y - obj2.y));
+        if (distX < obj1.width) {
+            if (distY < obj1.height) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
 class SceneMain extends Phaser.Scene {
     constructor() {
         super('SceneMain');
@@ -17,11 +30,10 @@ class SceneMain extends Phaser.Scene {
         this.input.keyboard.on('keydown', function (event) {
 
             if (event.keyCode === Phaser.Input.Keyboard.KeyCodes.RIGHT) {
-                this.scene.player.setVelocity(200,0)
+                this.scene.player.setVelocity(200, 0)
             }
-
             if (event.keyCode === Phaser.Input.Keyboard.KeyCodes.LEFT) {
-                this.scene.player.setVelocity(-200,0)
+                this.scene.player.setVelocity(-200, 0)
             }
 
         });
@@ -33,6 +45,10 @@ class SceneMain extends Phaser.Scene {
         this.load.image('block', 'img/tech_sprites/intnode.png');
     }
     create() {
+        this.score = 0;
+        this.text1 = this.add.text(0,0, "Score: " + this.score);
+        this.text1.depth = 1;
+
         // create bg sprite
         let bg = this.add.sprite(0, 0, 'background');
         bg.setOrigin(0, 0);
@@ -41,13 +57,13 @@ class SceneMain extends Phaser.Scene {
         this.player = this.physics.add.sprite(this.sys.game.config.width / 2, 450, 'player');
         this.player.setScale(1);
         this.player.setImmovable();
-        this.player.setFriction(1,1);
-        
+        this.player.setFriction(1, 1);
+
         //create a falling block
 
         this.block = this.physics.add.sprite(this.sys.game.config.width / 2, 100, 'block');
         this.block.setGravityY(200);
-        this.block.setFriction(1,1);
+        this.block.setFriction(1, 1);
         this.physics.add.collider(this.player, this.block);
 
     }
@@ -55,6 +71,23 @@ class SceneMain extends Phaser.Scene {
 
         // don't execute if we are terminating
         if (this.isTerminating) return;
+
+        if (Collision.checkCollide(this.block, this.player) === true) {
+            console.log("Collision!");
+            this.score += 10;
+            this.text1 = this.add.text(0,0, "");
+            this.text1 = this.add.text(0,0, "Score: " + this.score);
+            
+            console.log(this.block);
+
+            this.block.setActive(false);
+
+            // this.block.destroy();
+            this.block.y = 100;
+            // this.block.setActive(true).setVisible(true);
+            console.log(this.block);
+            
+        }
 
         //player boundaries
 
@@ -71,7 +104,7 @@ class SceneMain extends Phaser.Scene {
         //TODO set game over conditions
 
         // if ()) {
-            
+
 
         //     // end game
         //     return this.gameOver();
