@@ -80,7 +80,7 @@ class SceneMain extends Phaser.Scene {
             //removes the block and respawns it back up at a random X position
             this.block.setVisible(false);
             this.block.y = 100;
-            this.block.x = Math.floor(Math.random() * this.playerMaxX - 60) + this.playerMinX + 30;
+            this.block.x = Math.floor(Math.random() * this.playerMaxX - 100) + this.playerMinX + 60;
             this.block.setVisible(true);
             // this.block.setActive(true).setVisible(true);
             
