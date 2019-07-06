@@ -18,7 +18,7 @@ class SceneMain extends Phaser.Scene {
 
     init() {
         // player variables
-        this.playerSpeed = 7;
+        this.playerSpeed = 200;
         this.playerMinX = 100;
         this.playerMaxX = 540;
 
@@ -30,10 +30,10 @@ class SceneMain extends Phaser.Scene {
         this.input.keyboard.on('keydown', function (event) {
 
             if (event.keyCode === Phaser.Input.Keyboard.KeyCodes.RIGHT) {
-                this.scene.player.setVelocity(200, 0)
+                this.scene.player.setVelocity(this.scene.playerSpeed, 0)
             }
             if (event.keyCode === Phaser.Input.Keyboard.KeyCodes.LEFT) {
-                this.scene.player.setVelocity(-200, 0)
+                this.scene.player.setVelocity(-this.scene.playerSpeed, 0)
             }
 
         });
@@ -46,7 +46,7 @@ class SceneMain extends Phaser.Scene {
     }
     create() {
         this.score = 0;
-        this.text1 = this.add.text(0,0, "Score: " + this.score);
+        this.text1 = this.add.text(0,0, "Score: " + this.score, { font: '25px Share Tech Mono', fill: '#000000' });
         this.text1.depth = 1;
 
         // create bg sprite
@@ -75,17 +75,14 @@ class SceneMain extends Phaser.Scene {
         if (Collision.checkCollide(this.block, this.player) === true) {
             console.log("Collision!");
             this.score += 10;
-            this.text1 = this.add.text(0,0, "");
-            this.text1 = this.add.text(0,0, "Score: " + this.score);
+            this.text1.setText("Score: " + this.score);
             
-            console.log(this.block);
-
-            this.block.setActive(false);
-
-            // this.block.destroy();
+            //removes the block and respawns it back up at a random X position
+            this.block.setVisible(false);
             this.block.y = 100;
+            this.block.x = Math.floor(Math.random() * this.playerMaxX - 60) + this.playerMinX + 30;
+            this.block.setVisible(true);
             // this.block.setActive(true).setVisible(true);
-            console.log(this.block);
             
         }
 
