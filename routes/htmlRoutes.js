@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (high_scoresDB) {
+    db.Score.findAll({}).then(function (high_scoresDB) {
       res.render("index", {
         msg: "Welcome!",
         examples: high_scoresDB
@@ -13,7 +13,7 @@ module.exports = function (app) {
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
-    db.Example.findOne({
+    db.Score.findOne({
       where: {
         id: req.params.id
       }
