@@ -2,7 +2,7 @@
 
 #Team Members
 
-Alex Engelmann - back-end and game itself
+Alex Engelmann - back-end and game itself <br>
 Kelen Quach - front end design
 
 #Description
