@@ -11,9 +11,8 @@ A simple 2D block catching game, using MySQL to store a high score table like in
 
 #Technologies
 
-* The game will be rendered using Phaser3 
-* Player records/high scores will be stored in a MySQL database
-* The backend will be a Node.js and Express server
+* The game is rendered using Phaser3 
+* The backend is a Node.js and Express server
 
 
 
